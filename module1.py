@@ -13,14 +13,14 @@ def leia_samad_palgad(palgad, inimesed):
 
 
 #16
-def nimeta_iga_kolmanda_inimene_ümber(inimesed, uued_nimed):
+def nimeta_iga_kolmanda_inimene_ümber(inimesed, uued_nimed):#Функция перебирает список имен, используя цикл for, и отслеживает индекс и текущее имя, используя функцию перечисления.
     uuendatud_inimesed = []
     for i, nimi in (inimesed):
-        if (i+1) % 3 == 0:  #  3
+        if (i+1) % 3 == 0:  #  3 функция проверяет, не осталось ли новых имен в списке «uued_nimed». Если есть, он заменяет текущее имя первым новым именем в списке, используя функцию pop
             if uued_nimed:  # если остались новые имена
-                uuendatud_inimesed.append(uued_nimed.pop(0))
+                uuendatud_inimesed.append(uued_nimed.pop(0)) #Функция добавляет текущееимя в новый список «uuendatud_inimesed»
             else:
-                uuendatud_inimesed.append(nimi)  # использовать новое имя
+                uuendatud_inimesed.append(nimi)  # функция обновляет имя каждого третьего человека в списке «inimesed» новым именем из списка «uued_nimed», если оно доступно. Если новых имен нет, сохраняется исходное имя.
         else:
             uuendatud_inimesed.append(nimi)
     return uuendatud_inimesed
